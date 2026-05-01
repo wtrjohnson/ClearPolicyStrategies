@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Areas — Clear Policy Strategies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B3A6B;
+      --navy-dark: #0F2447;
+      --navy-mid: #243F75;
+      --red: #B8102A;
+      --red-bright: #C8102E;
+      --gold: #C9A84C;
+      --white: #FFFFFF;
+      --off-white: #F7F6F3;
+      --light-gray: #EAEAEA;
+      --text-dark: #1A1A2E;
+      --text-mid: #4A4A6A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 48px;
+      height: 88px;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-left a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-left a:hover { color: var(--navy); }
+    .nav-left a.active { color: var(--navy); font-weight: 600; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    .nav-logo img { height: 72px; width: auto; filter: brightness(0) saturate(100%) invert(19%) sepia(65%) saturate(600%) hue-rotate(205deg) brightness(90%); }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-cta {
+      background: var(--red-bright);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: #a50e26; }
+
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--off-white);
+      padding: 160px 48px 80px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .page-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+
+    .page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .page-eyebrow-line { width: 32px; height: 2px; background: var(--red-bright); }
+
+    .page-eyebrow span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+    }
+
+    .page-header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.1;
+    }
+
+    .page-header h1 em { font-style: italic; color: var(--red-bright); }
+
+    .page-header-intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      align-self: end;
+      padding-bottom: 4px;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow-line { width: 32px; height: 2px; background: var(--red-bright); }
+
+    .section-eyebrow span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+    }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.18;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      background: var(--red-bright);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #a50e26; transform: translateY(-1px); }
+
+    /* ── PRACTICE AREA SECTIONS ── */
+    .practice-section {
+      padding: 100px 48px;
+    }
+
+    .practice-section:nth-child(even) { background: var(--off-white); }
+    .practice-section:nth-child(odd) { background: var(--white); }
+
+    .practice-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .practice-section-inner.reverse { direction: rtl; }
+    .practice-section-inner.reverse > * { direction: ltr; }
+
+    .practice-section-icon {
+      width: 56px;
+      height: 56px;
+      color: var(--navy);
+      margin-bottom: 28px;
+    }
+
+    .practice-section h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(34px, 3.5vw, 48px);
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .practice-section h2 em { font-style: italic; color: var(--red-bright); }
+
+    .practice-section-body {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 36px;
+    }
+
+    .practice-section-body p + p { margin-top: 18px; }
+
+    .practice-detail-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .practice-detail-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .detail-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red-bright);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* ── VISUAL PANEL ── */
+    .practice-visual {
+      background: var(--navy-dark);
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .practice-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--red-bright);
+    }
+
+    .practice-visual-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .practice-visual-stat:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .stat-number {
+      font-family: 'EB Garamond', serif;
+      font-size: 52px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-number sup { font-size: 24px; vertical-align: super; }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .stat-detail {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.55);
+      margin-top: 4px;
+    }
+
+    /* ── AGENCIES SECTION ── */
+    .agencies-section {
+      background: var(--navy-dark);
+      padding: 80px 48px;
+      position: relative;
+    }
+
+    .agencies-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red-bright);
+    }
+
+    .agencies-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .agencies-inner .section-eyebrow span { color: rgba(255,255,255,0.5); }
+    .agencies-inner .section-eyebrow-line { background: var(--gold); }
+
+    .agencies-inner .section-title {
+      color: var(--white);
+      margin-bottom: 56px;
+    }
+
+    .agencies-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+
+    .agency-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 32px 28px;
+      transition: background 0.2s;
+    }
+
+    .agency-card:hover { background: rgba(255,255,255,0.08); }
+
+    .agency-card h4 {
+      font-family: 'EB Garamond', serif;
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .agency-card p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--navy-dark);
+      padding: 80px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
+    }
+
+    .cta-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .cta-text h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .cta-text p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+
+    .cta-contact-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1E;
+      padding: 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo img {
+      height: 40px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    .footer-credit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .footer-credit:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-credit img {
+      height: 20px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <ul class="nav-left">
+      <li><a href="proposal-a.html">About</a></li>
+      <li><a href="practice-areas.html" class="active">Practice Areas</a></li>
+    </ul>
+    <a href="proposal-a.html" class="nav-logo">
+      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
+    </a>
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div>
+        <div class="page-eyebrow">
+          <div class="page-eyebrow-line"></div>
+          <span>Practice Areas</span>
+        </div>
+        <h1>Two Pillars.<br /><em>One Firm.</em></h1>
+      </div>
+      <p class="page-header-intro">
+        Clear Policy Strategies works in two areas: U.S. investment strategy and international business. Both come out of twenty years across private equity, tax policy, and cross-border transactions.
+      </p>
+    </div>
+  </section>
+
+  <!-- INVESTMENT -->
+  <section class="practice-section" id="investment">
+    <div class="practice-section-inner">
+      <div>
+        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+          <path d="M7 44L18 28L28 35L40 16L49 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M45 16H49V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 49H47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Pillar One</span>
+        </div>
+        <h2>Investment<br /><em>Strategy</em></h2>
+
+        <div class="practice-section-body">
+          <p>For twenty years, Aaron has worked in both private equity and federal policy. It's an uncommon combination. He understands how capital moves and how the legislation governing it actually gets made.</p>
+          <p>Whether you're managing tax exposure under a changing international framework or assessing policy risk before a major transaction, Clear Policy Strategies gives you strategic counsel and direct access before decisions are made, not after.</p>
+        </div>
+
+        <ul class="practice-detail-list">
+          <li><span class="detail-dot"></span>Tax policy impact assessments for investment structures and M&amp;A transactions</li>
+          <li><span class="detail-dot"></span>International tax structure advisory — GILTI, BEAT, FDII, and Pillar Two frameworks</li>
+          <li><span class="detail-dot"></span>Legislative monitoring on carried interest, capital gains, and financial services regulation</li>
+          <li><span class="detail-dot"></span>Advocacy before Senate Finance Committee and House Ways &amp; Means Committee</li>
+          <li><span class="detail-dot"></span>Coalition building and stakeholder strategy for regulatory outcomes</li>
+          <li><span class="detail-dot"></span>Strategic counsel on CFIUS and foreign investment review processes</li>
+        </ul>
+
+        <a href="contact.html" class="btn-primary">
+          Discuss Your Situation
+        </a>
+      </div>
+
+      <div class="practice-visual">
+        <div class="practice-visual-stat">
+          <div class="stat-number">20<sup>+</sup></div>
+          <div class="stat-label">Years in Private Equity &amp; Policy</div>
+        </div>
+        <div class="practice-visual-stat">
+          <div class="stat-number">30<sup>+</sup></div>
+          <div class="stat-label">Senate Finance Hearings Organized</div>
+        </div>
+        <div class="practice-visual-stat">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Key Legislative Committees</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNATIONAL -->
+  <section class="practice-section" id="international">
+    <div class="practice-section-inner reverse">
+      <div>
+        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+          <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
+          <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
+          <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Pillar Two</span>
+        </div>
+        <h2>International<br /><em>Business</em></h2>
+
+        <div class="practice-section-body">
+          <p>Washington is complicated for foreign governments and international businesses. The rules are fragmented, the politics move fast, and misreading a policy signal can be costly.</p>
+          <p>Aaron spent years at the Global Business Alliance advising nearly 200 international companies on U.S. tax, trade, and regulatory matters. He has active relationships at Treasury, Commerce, USTR, and across the Senate Republican Conference.</p>
+        </div>
+
+        <ul class="practice-detail-list">
+          <li><span class="detail-dot"></span>Market entry strategy and U.S. regulatory roadmapping for foreign businesses</li>
+          <li><span class="detail-dot"></span>Tariff and trade agreement strategy — Section 232, Section 301, and bilateral negotiations</li>
+          <li><span class="detail-dot"></span>Advocacy before Treasury, Commerce, and the U.S. Trade Representative's office</li>
+          <li><span class="detail-dot"></span>Foreign government advisory on bilateral trade and investment frameworks</li>
+          <li><span class="detail-dot"></span>Political risk assessment and legislative intelligence for cross-border transactions</li>
+          <li><span class="detail-dot"></span>Stakeholder engagement with the National Economic Council and Domestic Policy Council</li>
+        </ul>
+
+        <a href="contact.html" class="btn-primary">
+          Discuss Your Situation
+        </a>
+      </div>
+
+      <div class="practice-visual">
+        <div class="practice-visual-stat">
+          <div class="stat-number">200<sup>+</sup></div>
+          <div class="stat-label">International Companies Represented</div>
+        </div>
+        <div class="practice-visual-stat">
+          <div class="stat-number">5<sup>+</sup></div>
+          <div class="stat-label">Years of International Focus</div>
+        </div>
+        <div class="practice-visual-stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Key Federal Agencies</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <div class="cta-text">
+        <h2>Ready to Shape Policy<br />in Your Favor?</h2>
+        <p>Contact us to talk through your specific situation.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
+          Schedule a Consultation
+        </a>
+        <div class="cta-contact-info">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 0v6l4 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Washington, D.C. — Available Nationwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="Logo-traced.png" alt="Clear Policy Strategies" />
+      </div>
+      <ul class="footer-nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="practice-areas.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Clear Policy Strategies. All rights reserved.</div>
+      <a href="https://pebblesprings.co" target="_blank" class="footer-credit">
+        <span>Built by</span>
+        <img src="PSLogo.svg" alt="Pebblesprings Studio" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

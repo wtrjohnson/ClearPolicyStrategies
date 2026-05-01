@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Clear Policy Strategies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B3A6B;
+      --navy-dark: #0F2447;
+      --navy-mid: #243F75;
+      --red: #B8102A;
+      --red-bright: #C8102E;
+      --gold: #C9A84C;
+      --white: #FFFFFF;
+      --off-white: #F7F6F3;
+      --light-gray: #EAEAEA;
+      --text-dark: #1A1A2E;
+      --text-mid: #4A4A6A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 92px;
+      background: rgba(15, 36, 71, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img { height: 68px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active { color: var(--white); }
+
+    .nav-cta {
+      background: var(--red-bright) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      font-size: 12px !important;
+      letter-spacing: 0.1em !important;
+    }
+
+    .nav-cta:hover { background: #a50e26 !important; }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: var(--navy-dark);
+      padding: 160px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 92px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
+    }
+
+    .page-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .page-eyebrow-line {
+      width: 32px;
+      height: 2px;
+      background: var(--red-bright);
+    }
+
+    .page-eyebrow span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .page-header h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 700px;
+    }
+
+    .page-header h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── SECTION SHARED ── */
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .section-eyebrow-line {
+      width: 32px;
+      height: 2px;
+      background: var(--red-bright);
+    }
+
+    .section-eyebrow span {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red-bright);
+    }
+
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 46px);
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.18;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 32px;
+      background: var(--red-bright);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: #a50e26; transform: translateY(-1px); }
+
+    /* ── BIO SECTION ── */
+    .bio-section {
+      padding: 100px 48px;
+      background: var(--white);
+    }
+
+    .bio-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 460px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .bio-photo {
+      position: relative;
+    }
+
+    .bio-photo img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .bio-photo-tag {
+      position: absolute;
+      bottom: -1px;
+      left: -1px;
+      background: var(--navy-dark);
+      padding: 20px 28px;
+    }
+
+    .bio-photo-tag strong {
+      display: block;
+      font-family: 'EB Garamond', serif;
+      font-size: 18px;
+      color: var(--white);
+    }
+
+    .bio-photo-tag span {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .bio-photo::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid rgba(27,58,107,0.15);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .bio-body {
+      font-size: 17px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 40px;
+    }
+
+    .bio-body p + p { margin-top: 22px; }
+
+    /* ── CREDENTIALS SECTION ── */
+    .credentials-section {
+      padding: 80px 48px;
+      background: var(--off-white);
+    }
+
+    .credentials-section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .credentials-section-inner .section-title {
+      margin-bottom: 56px;
+    }
+
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .credential-block {
+      background: var(--white);
+      padding: 40px 44px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .credential-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      color: var(--navy);
+      margin-top: 2px;
+    }
+
+    .credential-block h4 {
+      font-family: 'EB Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .credential-block p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* ── EDUCATION SECTION ── */
+    .education-section {
+      padding: 80px 48px;
+      background: var(--white);
+    }
+
+    .education-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .education-degrees {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .education-degrees li {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .education-degrees li:first-child { border-top: 1px solid var(--light-gray); }
+
+    .degree-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--navy-dark);
+    }
+
+    .degree-school {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+    }
+
+    .education-quote {
+      padding: 48px;
+      background: var(--navy-dark);
+      position: relative;
+    }
+
+    .education-quote::before {
+      content: '\201C';
+      font-family: 'EB Garamond', serif;
+      font-size: 120px;
+      color: rgba(201,168,76,0.2);
+      position: absolute;
+      top: 16px;
+      left: 32px;
+      line-height: 1;
+    }
+
+    .education-quote blockquote {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .education-quote cite {
+      display: block;
+      margin-top: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: var(--navy-dark);
+      padding: 80px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
+    }
+
+    .cta-banner-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    .cta-text h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(28px, 3vw, 42px);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .cta-text p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+      flex-shrink: 0;
+    }
+
+    .cta-contact-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1E;
+      padding: 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo img {
+      height: 40px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: rgba(255,255,255,0.8); }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .footer-credit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .footer-credit:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .footer-credit img {
+      height: 20px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="proposal-a.html" class="nav-logo">
+      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="practice-areas.html">Practice Areas</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="page-header-inner">
+      <div class="page-eyebrow">
+        <div class="page-eyebrow-line"></div>
+        <span>About</span>
+      </div>
+      <h1>20 Years at the Intersection<br />of <em>Capital &amp; Policy.</em></h1>
+    </div>
+  </section>
+
+  <!-- BIO -->
+  <section class="bio-section">
+    <div class="bio-inner">
+      <div class="bio-photo">
+        <img src="Headshot2.jpeg" alt="Aaron Taylor" />
+        <div class="bio-photo-tag">
+          <strong>Aaron Taylor</strong>
+          <span>Founder, Clear Policy Strategies</span>
+        </div>
+      </div>
+
+      <div class="bio-content">
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Biography</span>
+        </div>
+        <h2 class="section-title" style="margin-bottom: 32px;">The Rare Combination of<br />Policy and Private Markets.</h2>
+
+        <div class="bio-body">
+          <p>Aaron Taylor founded Clear Policy Strategies to bring rare, dual-track experience to clients navigating Washington — twenty years spanning private equity investing and federal policy advocacy, with deep relationships across Capitol Hill, Treasury, and the White House.</p>
+          <p>He began his political career on the Senate Finance Committee under Chairman Orrin Hatch, organizing over 30 hearings on tax reform and building direct relationships with the Members and staff who draft every major piece of tax and trade legislation. That foundation gave Aaron an insider's understanding of how policy is actually made — and how to influence it effectively.</p>
+          <p>As VP of Tax &amp; Trade at the Global Business Alliance, he represented nearly 200 international companies before Treasury, the White House, and Capitol Hill — developing a uniquely global perspective on U.S. economic policy and the legislative environment that shapes cross-border investment.</p>
+          <p>Over the past five years, Aaron has focused on helping international governments and companies invest and succeed in the United States — bringing that same network to bear across the National Economic Council, Domestic Policy Council, Commerce Department, and the U.S. Trade Representative's office.</p>
+          <p>Today, Clear Policy Strategies serves a select group of clients who need more than access — they need strategic counsel from someone who has sat on both sides of the table.</p>
+        </div>
+
+        <a href="contact.html" class="btn-primary">
+          Work With Aaron
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials-section">
+    <div class="credentials-section-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Credentials &amp; Experience</span>
+      </div>
+      <h2 class="section-title" style="margin-bottom: 56px;">A Career Built at<br />the Highest Levels.</h2>
+
+      <div class="credentials-grid">
+        <div class="credential-block">
+          <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <path d="M8 34H36M8 38H36M22 6L36 16H8L22 6Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 16V34M18 16V34M26 16V34M31 16V34" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <h4>Senate Finance Committee</h4>
+            <p>Served under Chairman Orrin Hatch (R-UT), organizing over 30 hearings on tax reform. Built direct relationships with the Members and staff responsible for every major piece of tax and trade legislation originating in the Senate.</p>
+          </div>
+        </div>
+
+        <div class="credential-block">
+          <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="16" stroke="currentColor" stroke-width="1.8"/>
+            <ellipse cx="22" cy="22" rx="7" ry="16" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M6 22H38M6 15H38M6 29H38" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <h4>Global Business Alliance</h4>
+            <p>As VP of Tax &amp; Trade, represented nearly 200 international companies before the U.S. Treasury, the White House, and Capitol Hill — developing deep expertise in cross-border investment policy and international regulatory strategy.</p>
+          </div>
+        </div>
+
+        <div class="credential-block">
+          <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <rect x="6" y="10" width="32" height="28" rx="1" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M6 18H38M14 10V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M16 26h4M16 31h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <h4>White House: NEC &amp; Domestic Policy Council</h4>
+            <p>Worked directly with the National Economic Council and Domestic Policy Council — two of the most influential bodies shaping U.S. economic and regulatory policy — on behalf of international clients navigating U.S. market entry.</p>
+          </div>
+        </div>
+
+        <div class="credential-block">
+          <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <path d="M6 34L14 22L22 28L31 13L38 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M35 13H38V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 38H37" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <h4>Treasury, Commerce &amp; USTR</h4>
+            <p>Sustained, ongoing relationships with the U.S. Department of Treasury, the Commerce Department, and the U.S. Trade Representative's office — providing clients direct access to the agencies that set tariff, trade, and investment policy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education-section">
+    <div class="education-inner">
+      <div>
+        <div class="section-eyebrow">
+          <div class="section-eyebrow-line"></div>
+          <span>Education</span>
+        </div>
+        <h2 class="section-title" style="margin-bottom: 40px;">Academic<br />Foundation.</h2>
+
+        <ul class="education-degrees">
+          <li>
+            <span class="degree-name">Master of Business Administration</span>
+            <span class="degree-school">Quantic School of Business &amp; Technology</span>
+          </li>
+          <li>
+            <span class="degree-name">B.S., Business Management</span>
+            <span class="degree-school">BYU Marriott School of Business</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="education-quote">
+        <blockquote>
+          "The most effective advocacy isn't about access alone — it's about understanding how legislation actually moves, and positioning your client at exactly the right moment."
+          <cite>— Aaron Taylor, Founder</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <div class="cta-text">
+        <h2>Ready to Work<br />With Aaron?</h2>
+        <p>Schedule a confidential consultation to discuss your legislative strategy, regulatory challenges, or government relations needs.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="mailto:aaron@clearpolicystrategies.com" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
+          Get in Touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M8 2L13 7L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="Logo-traced.png" alt="Clear Policy Strategies" />
+      </div>
+      <ul class="footer-nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="practice-areas.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Clear Policy Strategies. All rights reserved.</div>
+      <a href="https://pebblesprings.co" target="_blank" class="footer-credit">
+        <span>Built by</span>
+        <img src="PSLogo.svg" alt="Pebblesprings Studio" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Clear Policy Strategies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1B3A6B;
+      --navy-dark: #0F2447;
+      --red: #B8102A;
+      --red-bright: #C8102E;
+      --gold: #C9A84C;
+      --white: #FFFFFF;
+      --off-white: #F7F6F3;
+      --light-gray: #EAEAEA;
+      --text-dark: #1A1A2E;
+      --text-mid: #4A4A6A;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 92px;
+      background: rgba(15, 36, 71, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo img { height: 68px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--red-bright) !important;
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 2px;
+      font-size: 12px !important;
+      letter-spacing: 0.1em !important;
+    }
+
+    .nav-cta:hover { background: #a50e26 !important; }
+
+    /* ── THANK YOU ── */
+    .thankyou-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-dark);
+      padding: 120px 48px;
+      position: relative;
+    }
+
+    .thankyou-section::before {
+      content: '';
+      position: absolute;
+      top: 92px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
+    }
+
+    .thankyou-inner {
+      text-align: center;
+      max-width: 560px;
+    }
+
+    .check-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 36px;
+    }
+
+    .thankyou-inner h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .thankyou-inner p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 44px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080F1E;
+      padding: 48px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-logo img {
+      height: 40px;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+    .footer-credit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .footer-credit:hover { color: rgba(255,255,255,0.8); }
+
+    .footer-credit img {
+      height: 20px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="proposal-a.html" class="nav-logo">
+      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="proposal-a.html#about">About</a></li>
+      <li><a href="practice-areas.html">Practice Areas</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- THANK YOU -->
+  <section class="thankyou-section">
+    <div class="thankyou-inner">
+      <div class="check-circle">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <path d="M6 14L11.5 19.5L22 9" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Thank You for<br />Reaching Out.</h1>
+      <p>Your message has been received. We'll be in touch.</p>
+      <a href="proposal-a.html" class="btn-secondary">Back to Home</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="Logo-traced.png" alt="Clear Policy Strategies" />
+      </div>
+      <ul class="footer-nav">
+        <li><a href="proposal-a.html#about">About</a></li>
+        <li><a href="practice-areas.html">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2025 Clear Policy Strategies. All rights reserved.</div>
+      <a href="https://pebblesprings.co" target="_blank" class="footer-credit">
+        <span>Built by</span>
+        <img src="PSLogo.svg" alt="Pebblesprings Studio" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
