@@ -33,56 +33,70 @@
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       padding: 0 48px;
-      height: 92px;
-      background: rgba(15, 36, 71, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      height: 88px;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
 
-    .nav-logo {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .nav-logo img { height: 68px; width: auto; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
+      gap: 32px;
       list-style: none;
     }
 
-    .nav-links a {
-      font-size: 13px;
+    .nav-left a {
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+      color: var(--text-dark);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-left a:hover { color: var(--navy); }
 
-    .nav-cta {
-      background: var(--red-bright) !important;
-      color: var(--white) !important;
-      padding: 10px 22px;
-      border-radius: 2px;
-      font-size: 12px !important;
-      letter-spacing: 0.1em !important;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
-    .nav-cta:hover { background: #a50e26 !important; }
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+      filter: brightness(0) saturate(100%) invert(19%) sepia(65%) saturate(600%) hue-rotate(205deg) brightness(90%);
+    }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-cta {
+      background: var(--red-bright);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: #a50e26; }
 
     /* ── THANK YOU ── */
     .thankyou-section {
@@ -160,8 +174,6 @@
     footer {
       background: #080F1E;
       padding: 48px;
-      border-radius: 20px 20px 0 0;
-      box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
     }
 
     .footer-inner {
@@ -223,14 +235,16 @@
 
   <!-- NAV -->
   <nav>
+    <ul class="nav-left">
+      <li><a href="about.html">About</a></li>
+      <li><a href="practice-areas.html">Practice Areas</a></li>
+    </ul>
     <a href="index.html" class="nav-logo">
       <img src="Logo-nav.png" alt="Clear Policy Strategies" />
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="practice-areas.html">Practice Areas</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-    </ul>
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
   </nav>
 
   <!-- THANK YOU -->
