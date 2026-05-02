@@ -256,16 +256,6 @@
       color: var(--gold);
     }
 
-    .bio-photo::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      right: 12px;
-      bottom: 12px;
-      border: 1px solid rgba(27,58,107,0.15);
-      pointer-events: none;
-    }
 
     .bio-body {
       font-size: 17px;
@@ -808,7 +798,7 @@
       var btn     = document.getElementById('work-with-aaron');
       var BUFFER  = 112; // nav height + small gap
 
-      var scrollStart, scrollEnd, maxTranslate, ticking = false;
+      var scrollStart, maxTranslate, ticking = false;
 
       function docTop(el) {
         var t = 0;
@@ -818,15 +808,12 @@
 
       function recalc() {
         scrollStart  = docTop(eyebrow) - BUFFER;
-        scrollEnd    = docTop(btn) + btn.offsetHeight - BUFFER;
-        // only translate far enough that photo bottom aligns with button bottom
         maxTranslate = (docTop(btn) + btn.offsetHeight) - (docTop(photo) + photo.offsetHeight);
       }
 
       function update() {
-        var range    = scrollEnd - scrollStart;
-        var progress = Math.max(0, Math.min(1, (window.scrollY - scrollStart) / range));
-        photo.style.transform = 'translateY(' + (progress * maxTranslate) + 'px)';
+        var ty = Math.max(0, Math.min(maxTranslate, window.scrollY - scrollStart));
+        photo.style.transform = 'translateY(' + ty + 'px)';
         ticking = false;
       }
 
