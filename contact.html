@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Clear Policy Strategies</title>
+  <meta name="description" content="Reach Clear Policy Strategies to discuss a tax, trade, investment, or regulatory policy challenge. Aaron Taylor responds within 24 business hours." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -155,8 +156,75 @@
     }
 
     .contact-inner {
-      max-width: 600px;
+      max-width: 1100px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* ── LEFT COLUMN ── */
+    .contact-info-col h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(26px, 2.5vw, 34px);
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .contact-info-col .contact-intro {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 44px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .contact-detail-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-value {
+      font-size: 15px;
+      color: var(--text-dark);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a.contact-detail-value:hover { color: var(--red-bright); }
+
+    .contact-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--light-gray);
+      margin: 36px 0;
+    }
+
+    .contact-assurance {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-mid);
+      padding: 16px 20px;
+      border-left: 3px solid var(--gold);
+      background: rgba(201, 168, 76, 0.06);
     }
 
     /* ── CONTACT FORM ── */
@@ -201,7 +269,7 @@
 
     .form-group textarea {
       resize: vertical;
-      min-height: 140px;
+      min-height: 160px;
     }
 
     .form-submit {
@@ -306,7 +374,7 @@
       <img src="Logo-nav.png" alt="Clear Policy Strategies" />
     </a>
     <div class="nav-right">
-      <a href="contact.html" class="nav-cta">Contact Us</a>
+      <a href="contact.html" class="nav-cta active">Contact Us</a>
     </div>
   </nav>
 
@@ -315,39 +383,77 @@
     <div class="page-header-inner">
       <div class="page-eyebrow">
         <div class="page-eyebrow-line"></div>
-        <span>Contact</span>
+        <span>Get in Touch</span>
       </div>
-      <h1>Let's Talk.</h1>
+      <h1>Start a Conversation.</h1>
       <p>
-        Send a message and Aaron will respond within 24 business hours.
+        Tell us briefly about the policy, tax, trade, investment, or regulatory issue you are facing. Clear Policy Strategies will respond promptly and confidentially.
       </p>
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT SECTION -->
   <section class="contact-section">
     <div class="contact-inner">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info-col">
+        <h2>How Can We Help?</h2>
+        <p class="contact-intro">
+          Whether you're navigating a policy risk, preparing for a transaction, or trying to shape a regulatory outcome, Aaron Taylor brings two decades of experience in federal tax and trade policy to bear on your situation.
+        </p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Email</div>
+            <a href="contact.html" class="contact-detail-value">Use the form to reach Aaron directly</a>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Response Time</div>
+            <div class="contact-detail-value">Within 24 business hours</div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-label">Location</div>
+            <div class="contact-detail-value">Washington, D.C.</div>
+          </div>
+        </div>
+
+        <div class="contact-divider"></div>
+
+        <div class="contact-assurance">
+          All inquiries are handled with strict confidentiality. Initial consultations are without obligation.
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="49534368-6ce2-469c-a922-d5ee098517bb">
         <input type="hidden" name="redirect" value="thank-you.html">
+
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="Company, firm, or embassy" />
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
         </div>
 
         <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+          <label for="message">How Can We Help?</label>
+          <textarea id="message" name="message" placeholder="Describe the policy, tax, trade, or regulatory issue you're facing. The more context you provide, the more useful our initial response will be." required></textarea>
         </div>
 
         <button type="submit" class="form-submit">Send Message</button>
-        <p class="form-note">We respond within 24 business hours.</p>
+        <p class="form-note">We respond within 24 business hours. All inquiries are confidential.</p>
       </form>
+
     </div>
   </section>
 

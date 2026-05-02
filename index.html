@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clear Policy Strategies</title>
+  <title>Clear Policy Strategies — U.S. Tax, Trade &amp; Regulatory Advisory</title>
+  <meta name="description" content="Clear Policy Strategies advises companies, investors, foreign governments, and executives on U.S. tax, trade, investment, and regulatory policy. Founded by Aaron Taylor." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -189,6 +190,15 @@
       color: var(--white);
       margin-bottom: 44px;
       max-width: 620px;
+      text-align: center;
+    }
+
+    .hero-qualifier {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.65;
+      margin-bottom: 28px;
+      max-width: 500px;
       text-align: center;
     }
 
@@ -410,6 +420,54 @@
     .practice-cta-row {
       margin-top: 56px;
       text-align: center;
+    }
+
+    /* ── WHEN WASHINGTON ── */
+    .when-washington {
+      background: var(--navy-dark);
+      padding: 80px 48px;
+    }
+
+    .when-washington-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .when-washington-title {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .when-washington-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .when-washington-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .when-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      margin-top: 8px;
     }
 
     /* ── ABOUT PREVIEW ── */
@@ -682,6 +740,22 @@
       color: rgba(255,255,255,0.7);
     }
 
+    .diff-help-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .diff-help-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.7);
+    }
+
     /* ── TESTIMONIAL ── */
     .testimonial-section {
       background: var(--off-white);
@@ -881,11 +955,12 @@
       <div class="hero-copy">
         <h1>The Bridge Between<br /><em>Global Business &amp; U.S. Policy</em></h1>
         <p class="hero-description">
-          Twenty years in private equity and federal policy, advising companies, foreign governments, and executives on U.S. tax and trade law. Relationships across the Senate Finance Committee, Ways and Means, Treasury, and USTR.
+          Clear Policy Strategies helps companies, investors, and international clients anticipate U.S. tax, trade, and regulatory risk — and shape outcomes before decisions are made. Founded by Aaron Taylor, the firm brings twenty years across Senate Finance, Ways and Means, Treasury, USTR, the White House, and private-sector advocacy.
         </p>
+        <p class="hero-qualifier">For companies, investors, foreign governments, and executives facing U.S. tax, trade, investment, or regulatory questions.</p>
         <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">
-            Contact Us
+          <a href="contact.html" class="btn-primary">
+            Schedule a Confidential Consultation
           </a>
           <a href="practice-areas.html" class="btn-secondary">Our Practice Areas</a>
         </div>
@@ -910,6 +985,20 @@
       </div>
     </div>
   </div>
+
+  <!-- WHEN WASHINGTON -->
+  <section class="when-washington">
+    <div class="when-washington-inner">
+      <h2 class="when-washington-title">When Washington<br />Decisions Affect<br />Your Business</h2>
+      <ul class="when-washington-list">
+        <li><span class="when-dot"></span>Tax legislation could alter investment or transaction economics</li>
+        <li><span class="when-dot"></span>Tariff or trade policy affects market access or supply chains</li>
+        <li><span class="when-dot"></span>Foreign investment faces political or regulatory scrutiny</li>
+        <li><span class="when-dot"></span>Executive branch implementation matters as much as the statute</li>
+        <li><span class="when-dot"></span>A company needs to understand what policymakers are likely to do next</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section class="about-section" id="about">
@@ -958,12 +1047,24 @@
       </div>
       <h2 class="section-title">What Makes Clear Policy<br />Strategies Different</h2>
 
-      <div class="diff-body">
-        <p>Clear Policy Strategies is not a generalist lobbying firm. It's a boutique practice built around one discipline: translating complex tax and trade policy into real results for clients who need results, not reports.</p>
-        <br />
-        <p>Aaron Taylor spent twenty years working inside the Senate Finance Committee, the Trump transition, the Ways and Means Committee, and the Executive Branch, with active relationships at Treasury, Commerce, USTR, State, and the Senate Republican Conference.</p>
-        <br />
-        <p>Most firms offer access. Clear Policy Strategies offers access plus the policy depth to use it. Aaron has personally driven legislative outcomes worth hundreds of billions of dollars.</p>
+      <div class="diff-grid">
+        <div class="diff-body">
+          <p>Clear Policy Strategies is not a generalist lobbying firm. It's a boutique practice built around one discipline: translating complex tax and trade policy into real results for clients who need results, not reports.</p>
+          <br />
+          <p>Aaron Taylor spent twenty years working inside the Senate Finance Committee, the Trump transition, the Ways and Means Committee, and the Executive Branch, with active relationships at Treasury, Commerce, USTR, State, and the Senate Republican Conference.</p>
+          <br />
+          <p>Most firms offer access. Clear Policy Strategies offers access plus the policy depth to use it. Aaron has worked directly on tax, trade, and regulatory decisions affecting hundreds of billions of dollars in investment, cross-border commerce, and business planning.</p>
+        </div>
+        <div class="diff-clients">
+          <h3>Where Clear Policy Helps</h3>
+          <ul class="diff-help-list">
+            <li><span class="when-dot"></span>Tax legislation and implementation strategy</li>
+            <li><span class="when-dot"></span>Tariff, trade, and market access issues</li>
+            <li><span class="when-dot"></span>Foreign investment and CFIUS-related risk</li>
+            <li><span class="when-dot"></span>Congressional and executive branch engagement</li>
+            <li><span class="when-dot"></span>Policy intelligence for transactions and capital allocation</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -980,7 +1081,7 @@
           <h2 class="section-title">Two Pillars.<br />One Firm.</h2>
         </div>
         <p class="practice-intro">
-          Clear Policy Strategies is built on two focus areas: Investment Strategy and International Businesses. With over twenty years of experience at the intersection of private equity, tax policy, and business strategy, our advocacy will deliver the stability your business needs.
+          Clear Policy Strategies works in two areas: tax, investment, and capital strategy for companies and investors; and market access and regulatory navigation for international businesses and governments. Both draw from the same senior network built over twenty years.
         </p>
       </div>
 
@@ -991,8 +1092,8 @@
             <path d="M38 14H42V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 42H40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          <h3>Investment Strategy</h3>
-          <p>Advising companies and investors on the tax, trade, and financial services policies that affect investment decisions. Direct relationships on the Senate Finance and Ways &amp; Means Committees.</p>
+          <h3>Investment, Tax &amp; Capital Strategy</h3>
+          <p>For investors, companies, and transaction-driven clients navigating tax legislation, capital gains exposure, CFIUS, or the financial services policies that affect investment decisions.</p>
           <a href="practice-areas.html#investment" class="practice-card-link">
             Learn More
           </a>
@@ -1004,8 +1105,8 @@
             <ellipse cx="24" cy="24" rx="8" ry="18" stroke="currentColor" stroke-width="2"/>
             <path d="M6 24H42M6 16H42M6 32H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          <h3>International Business</h3>
-          <p>Helping foreign governments and international businesses find their footing in the U.S. regulatory and investment environment. Built on experience advising nearly 200 international companies.</p>
+          <h3>International Business &amp; Market Access</h3>
+          <p>For foreign companies, embassies, trade associations, and governments managing tariff exposure, market entry, or bilateral trade and investment challenges in the United States.</p>
           <a href="practice-areas.html#international" class="practice-card-link">
             Learn More
           </a>
@@ -1025,12 +1126,12 @@
   <section class="cta-banner" id="contact">
     <div class="cta-banner-inner">
       <div class="cta-text">
-        <h2>Ready to Shape Policy<br />in Your Favor?</h2>
-        <p>Contact us to talk through your specific situation.</p>
+        <h2>Ready to Discuss a<br />Policy Challenge?</h2>
+        <p>Clear Policy Strategies responds promptly and confidentially.</p>
       </div>
       <div class="cta-actions">
         <a href="contact.html" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
-          Contact Us
+          Schedule a Confidential Consultation
         </a>
       </div>
     </div>
@@ -1045,8 +1146,7 @@
       <ul class="footer-nav">
         <li><a href="about.html">About</a></li>
         <li><a href="practice-areas.html">Practice Areas</a></li>
-        <li><a href="#advisors">Senior Advisors</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">&copy; 2026 Clear Policy Strategies. All rights reserved.</div>
       <a href="https://pebblesprings.co" target="_blank" class="footer-credit">
