@@ -224,6 +224,7 @@
 
     .bio-photo {
       position: relative;
+      will-change: transform;
     }
 
     .bio-photo img {
@@ -320,35 +321,30 @@
 
     /* ── EDUCATION SECTION ── */
     .education-section {
-      padding: 80px 48px;
+      padding: 60px 48px;
       background: var(--white);
     }
 
     .education-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
     }
 
     .education-degrees {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 40px;
     }
 
     .education-degrees li {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--light-gray);
+      background: var(--off-white);
+      padding: 36px 44px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
-
-    .education-degrees li:first-child { border-top: 1px solid var(--light-gray); }
 
     .degree-name {
       font-family: 'EB Garamond', serif;
@@ -363,45 +359,6 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--text-mid);
-    }
-
-    .education-quote {
-      padding: 48px;
-      background: var(--navy-dark);
-      position: relative;
-    }
-
-    .education-quote::before {
-      content: '\201C';
-      font-family: 'EB Garamond', serif;
-      font-size: 120px;
-      color: rgba(201,168,76,0.2);
-      position: absolute;
-      top: 16px;
-      left: 32px;
-      line-height: 1;
-    }
-
-    .education-quote blockquote {
-      font-family: 'EB Garamond', serif;
-      font-size: 22px;
-      font-style: italic;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
-    }
-
-    .education-quote cite {
-      display: block;
-      margin-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gold);
     }
 
     /* ── SENIOR ADVISORS ── */
@@ -668,9 +625,16 @@
 
         <div class="credential-block">
           <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <clipPath id="clip-globe">
+                <circle cx="22" cy="22" r="16"/>
+              </clipPath>
+            </defs>
             <circle cx="22" cy="22" r="16" stroke="currentColor" stroke-width="1.8"/>
-            <ellipse cx="22" cy="22" rx="7" ry="16" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M6 22H38M6 15H38M6 29H38" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <g clip-path="url(#clip-globe)">
+              <ellipse cx="22" cy="22" rx="7" ry="16" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M6 22H38M6 15H38M6 29H38" stroke="currentColor" stroke-width="1.8"/>
+            </g>
           </svg>
           <div>
             <h4>Global Business Alliance</h4>
@@ -708,31 +672,22 @@
   <!-- EDUCATION -->
   <section class="education-section">
     <div class="education-inner">
-      <div>
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Education</span>
-        </div>
-        <h2 class="section-title" style="margin-bottom: 40px;">Academic<br />Foundation.</h2>
-
-        <ul class="education-degrees">
-          <li>
-            <span class="degree-name">Master of Business Administration</span>
-            <span class="degree-school">Quantic School of Business &amp; Technology</span>
-          </li>
-          <li>
-            <span class="degree-name">B.S., Business Management</span>
-            <span class="degree-school">BYU Marriott School of Business</span>
-          </li>
-        </ul>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Education</span>
       </div>
+      <h2 class="section-title">Academic Foundation.</h2>
 
-      <div class="education-quote">
-        <blockquote>
-          "The most effective advocacy isn't about access alone — it's about understanding how legislation actually moves, and positioning your client at exactly the right moment."
-          <cite>— Aaron Taylor, Founder</cite>
-        </blockquote>
-      </div>
+      <ul class="education-degrees">
+        <li>
+          <span class="degree-name">Master of Business Administration</span>
+          <span class="degree-school">Quantic School of Business &amp; Technology</span>
+        </li>
+        <li>
+          <span class="degree-name">B.S., Business Management</span>
+          <span class="degree-school">BYU Marriott School of Business</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -812,7 +767,7 @@
       }
 
       function update() {
-        var ty = Math.max(0, Math.min(maxTranslate, window.scrollY - scrollStart));
+        var ty = Math.max(0, Math.min(maxTranslate, Math.round(window.scrollY - scrollStart)));
         photo.style.transform = 'translateY(' + ty + 'px)';
         ticking = false;
       }
