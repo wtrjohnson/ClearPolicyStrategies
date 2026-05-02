@@ -224,6 +224,7 @@
 
     .bio-photo {
       position: relative;
+      will-change: transform;
     }
 
     .bio-photo img {
@@ -649,7 +650,7 @@
           <p>Clear Policy Strategies is a small practice by design. Clients come for the access, but what they're really paying for is knowing what the relevant people in Washington are thinking — and how to get in front of them at the right moment.</p>
         </div>
 
-        <a href="contact.html" class="btn-primary">
+        <a href="contact.html" class="btn-primary" id="work-with-aaron">
           Work With Aaron
         </a>
       </div>
@@ -802,5 +803,37 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var photo   = document.querySelector('.bio-photo');
+      var eyebrow = document.querySelector('.bio-content .section-eyebrow');
+      var btn     = document.getElementById('work-with-aaron');
+      var BUFFER  = 112; // nav (92px) + small gap
+
+      var scrollStart, scrollEnd;
+
+      function docTop(el) {
+        var t = 0;
+        while (el) { t += el.offsetTop; el = el.offsetParent; }
+        return t;
+      }
+
+      function recalc() {
+        scrollStart = docTop(eyebrow) - BUFFER;
+        scrollEnd   = docTop(btn) + btn.offsetHeight - BUFFER;
+      }
+
+      function update() {
+        var range    = scrollEnd - scrollStart;
+        var progress = Math.max(0, Math.min(1, (window.scrollY - scrollStart) / range));
+        photo.style.transform = 'translateY(' + (progress * range) + 'px)';
+      }
+
+      recalc();
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', function () { recalc(); update(); });
+    })();
+  </script>
 </body>
 </html>
