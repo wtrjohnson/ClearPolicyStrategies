@@ -206,14 +206,7 @@
     .practice-section-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
     }
-
-    .practice-section-inner.reverse { direction: rtl; }
-    .practice-section-inner.reverse > * { direction: ltr; }
 
     .practice-section-icon {
       width: 56px;
@@ -268,44 +261,31 @@
       margin-top: 7px;
     }
 
-    /* ── VISUAL PANEL ── */
-    .practice-visual {
-      background: var(--navy-dark);
-      padding: 56px 48px;
+    /* ── STATS BAR ── */
+    .practice-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .practice-stat-item {
+      padding: 0 48px;
+      border-right: 1px solid var(--light-gray);
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      position: relative;
-      overflow: hidden;
+      gap: 8px;
     }
 
-    .practice-visual::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--red-bright);
-    }
-
-    .practice-visual-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .practice-visual-stat:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    .practice-stat-item:first-child { padding-left: 0; }
+    .practice-stat-item:last-child { border-right: none; }
 
     .stat-number {
       font-family: 'EB Garamond', serif;
       font-size: 52px;
       font-weight: 600;
-      color: var(--white);
+      color: var(--navy);
       line-height: 1;
     }
 
@@ -316,14 +296,7 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .stat-detail {
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.55);
-      margin-top: 4px;
+      color: var(--text-mid);
     }
 
     /* ── AGENCIES SECTION ── */
@@ -537,50 +510,44 @@
   <!-- INVESTMENT -->
   <section class="practice-section" id="investment">
     <div class="practice-section-inner">
-      <div>
-        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
-          <path d="M7 44L18 28L28 35L40 16L49 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M45 16H49V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 49H47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+        <path d="M7 44L18 28L28 35L40 16L49 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M45 16H49V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 49H47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
 
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Pillar One</span>
-        </div>
-        <h2>Investment<br /><em>Strategy</em></h2>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Pillar One</span>
+      </div>
+      <h2>Investment<br /><em>Strategy</em></h2>
 
-        <div class="practice-section-body">
-          <p>For twenty years, Aaron has worked in both private equity and federal policy. It's an uncommon combination. He understands how capital moves and how the legislation governing it actually gets made.</p>
-          <p>Whether you're managing tax exposure under a changing international framework or assessing policy risk before a major transaction, Clear Policy Strategies gives you strategic counsel and direct access before decisions are made, not after.</p>
-        </div>
-
-        <ul class="practice-detail-list">
-          <li><span class="detail-dot"></span>Tax policy impact assessments for investment structures and M&amp;A transactions</li>
-          <li><span class="detail-dot"></span>International tax structure advisory — GILTI, BEAT, FDII, and Pillar Two frameworks</li>
-          <li><span class="detail-dot"></span>Legislative monitoring on carried interest, capital gains, and financial services regulation</li>
-          <li><span class="detail-dot"></span>Advocacy before Senate Finance Committee and House Ways &amp; Means Committee</li>
-          <li><span class="detail-dot"></span>Coalition building and stakeholder strategy for regulatory outcomes</li>
-          <li><span class="detail-dot"></span>Strategic counsel on CFIUS and foreign investment review processes</li>
-        </ul>
-
-        <a href="contact.html" class="btn-primary">
-          Discuss Your Situation
-        </a>
+      <div class="practice-section-body">
+        <p>For twenty years, Aaron has worked in both private equity and federal policy. It's an uncommon combination. He understands how capital moves and how the legislation governing it actually gets made.</p>
+        <p>Whether you're managing tax exposure under a changing international framework or assessing policy risk before a major transaction, Clear Policy Strategies gives you strategic counsel and direct access before decisions are made, not after.</p>
       </div>
 
-      <div class="practice-visual">
-        <div class="practice-visual-stat">
+      <ul class="practice-detail-list">
+        <li><span class="detail-dot"></span>Tax policy impact assessments for investment structures and M&amp;A transactions</li>
+        <li><span class="detail-dot"></span>International tax structure advisory — GILTI, BEAT, FDII, and Pillar Two frameworks</li>
+        <li><span class="detail-dot"></span>Legislative monitoring on carried interest, capital gains, and financial services regulation</li>
+        <li><span class="detail-dot"></span>Advocacy before Senate Finance Committee and House Ways &amp; Means Committee</li>
+        <li><span class="detail-dot"></span>Coalition building and stakeholder strategy for regulatory outcomes</li>
+        <li><span class="detail-dot"></span>Strategic counsel on CFIUS and foreign investment review processes</li>
+      </ul>
+
+      <a href="contact.html" class="btn-primary">
+        Discuss Your Situation
+      </a>
+
+      <div class="practice-stats-bar">
+        <div class="practice-stat-item">
           <div class="stat-number">20<sup>+</sup></div>
           <div class="stat-label">Years in Private Equity &amp; Policy</div>
         </div>
-        <div class="practice-visual-stat">
+        <div class="practice-stat-item">
           <div class="stat-number">30<sup>+</sup></div>
           <div class="stat-label">Senate Finance Hearings Organized</div>
-        </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Key Legislative Committees</div>
         </div>
       </div>
     </div>
@@ -588,51 +555,45 @@
 
   <!-- INTERNATIONAL -->
   <section class="practice-section" id="international">
-    <div class="practice-section-inner reverse">
-      <div>
-        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
-          <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
-          <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
-          <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+    <div class="practice-section-inner">
+      <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+        <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
+        <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
+        <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
 
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Pillar Two</span>
-        </div>
-        <h2>International<br /><em>Business</em></h2>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Pillar Two</span>
+      </div>
+      <h2>International<br /><em>Business</em></h2>
 
-        <div class="practice-section-body">
-          <p>Washington is complicated for foreign governments and international businesses. The rules are fragmented, the politics move fast, and misreading a policy signal can be costly.</p>
-          <p>Aaron spent years at the Global Business Alliance advising nearly 200 international companies on U.S. tax, trade, and regulatory matters. He has active relationships at Treasury, Commerce, USTR, and across the Senate Republican Conference.</p>
-        </div>
-
-        <ul class="practice-detail-list">
-          <li><span class="detail-dot"></span>Market entry strategy and U.S. regulatory roadmapping for foreign businesses</li>
-          <li><span class="detail-dot"></span>Tariff and trade agreement strategy — Section 232, Section 301, and bilateral negotiations</li>
-          <li><span class="detail-dot"></span>Advocacy before Treasury, Commerce, and the U.S. Trade Representative's office</li>
-          <li><span class="detail-dot"></span>Foreign government advisory on bilateral trade and investment frameworks</li>
-          <li><span class="detail-dot"></span>Political risk assessment and legislative intelligence for cross-border transactions</li>
-          <li><span class="detail-dot"></span>Stakeholder engagement with the National Economic Council and Domestic Policy Council</li>
-        </ul>
-
-        <a href="contact.html" class="btn-primary">
-          Discuss Your Situation
-        </a>
+      <div class="practice-section-body">
+        <p>Washington is complicated for foreign governments and international businesses. The rules are fragmented, the politics move fast, and misreading a policy signal can be costly.</p>
+        <p>Aaron spent years at the Global Business Alliance advising nearly 200 international companies on U.S. tax, trade, and regulatory matters. He has active relationships at Treasury, Commerce, USTR, and across the Senate Republican Conference.</p>
       </div>
 
-      <div class="practice-visual">
-        <div class="practice-visual-stat">
+      <ul class="practice-detail-list">
+        <li><span class="detail-dot"></span>Market entry strategy and U.S. regulatory roadmapping for foreign businesses</li>
+        <li><span class="detail-dot"></span>Tariff and trade agreement strategy — Section 232, Section 301, and bilateral negotiations</li>
+        <li><span class="detail-dot"></span>Advocacy before Treasury, Commerce, and the U.S. Trade Representative's office</li>
+        <li><span class="detail-dot"></span>Foreign government advisory on bilateral trade and investment frameworks</li>
+        <li><span class="detail-dot"></span>Political risk assessment and legislative intelligence for cross-border transactions</li>
+        <li><span class="detail-dot"></span>Stakeholder engagement with the National Economic Council and Domestic Policy Council</li>
+      </ul>
+
+      <a href="contact.html" class="btn-primary">
+        Discuss Your Situation
+      </a>
+
+      <div class="practice-stats-bar">
+        <div class="practice-stat-item">
           <div class="stat-number">200<sup>+</sup></div>
           <div class="stat-label">International Companies Represented</div>
         </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">5<sup>+</sup></div>
-          <div class="stat-label">Years of International Focus</div>
-        </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Key Federal Agencies</div>
+        <div class="practice-stat-item">
+          <div class="stat-number">25<sup>+</sup></div>
+          <div class="stat-label">Embassies in Aaron's Network</div>
         </div>
       </div>
     </div>
