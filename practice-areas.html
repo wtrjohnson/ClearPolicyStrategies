@@ -365,15 +365,7 @@
       overflow: hidden;
     }
 
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
-    }
-
-    .cta-banner-inner {
+.cta-banner-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
@@ -511,9 +503,9 @@
   <section class="practice-section" id="investment">
     <div class="practice-section-inner">
       <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
-        <path d="M7 44L18 28L28 35L40 16L49 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M45 16H49V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M9 49H47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 46H50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 40L20 30L30 34L41 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 16L41 16L41 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
 
       <div class="section-eyebrow">
@@ -553,9 +545,16 @@
   <section class="practice-section" id="international">
     <div class="practice-section-inner">
       <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+        <defs>
+          <clipPath id="clip-globe-lg">
+            <circle cx="28" cy="28" r="21"/>
+          </clipPath>
+        </defs>
         <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
-        <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
-        <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <g clip-path="url(#clip-globe-lg)">
+          <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
+          <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2"/>
+        </g>
       </svg>
 
       <div class="section-eyebrow">
