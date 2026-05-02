@@ -195,13 +195,56 @@
 
     .btn-primary:hover { background: #a50e26; transform: translateY(-1px); }
 
-    /* ── PRACTICE AREA SECTIONS ── */
+    /* ── PILLAR BREAK ── */
+    .pillar-break {
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .pillar-break-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Capitol.jpeg');
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .pillar-break-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 18, 40, 0.70);
+    }
+
+    .pillar-break-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .pillar-break-content h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .pillar-break-content h3 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── PRACTICE AREA SECTIONS ──*/
     .practice-section {
       padding: 100px 48px;
     }
 
-    .practice-section:nth-child(even) { background: var(--off-white); }
-    .practice-section:nth-child(odd) { background: var(--white); }
+    #investment { background: var(--white); }
+    #international { background: var(--off-white); }
 
     .practice-section-inner {
       max-width: 1200px;
@@ -540,6 +583,15 @@
       </div>
     </div>
   </section>
+
+  <!-- PILLAR BREAK -->
+  <div class="pillar-break">
+    <div class="pillar-break-bg"></div>
+    <div class="pillar-break-overlay"></div>
+    <div class="pillar-break-content">
+      <h3>Direct Access.<br /><em>Strategic Depth.</em></h3>
+    </div>
+  </div>
 
   <!-- INTERNATIONAL -->
   <section class="practice-section" id="international">
