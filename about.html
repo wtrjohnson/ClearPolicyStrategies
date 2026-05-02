@@ -224,7 +224,6 @@
 
     .bio-photo {
       position: relative;
-      will-change: transform;
     }
 
     .bio-photo img {
@@ -266,7 +265,6 @@
       bottom: 12px;
       border: 1px solid rgba(27,58,107,0.15);
       pointer-events: none;
-      z-index: -1;
     }
 
     .bio-body {
@@ -808,9 +806,9 @@
       var photo   = document.querySelector('.bio-photo');
       var eyebrow = document.querySelector('.bio-content .section-eyebrow');
       var btn     = document.getElementById('work-with-aaron');
-      var BUFFER  = 112; // nav (92px) + small gap
+      var BUFFER  = 112; // nav height + small gap
 
-      var scrollStart, scrollEnd;
+      var scrollStart, scrollEnd, maxTranslate, ticking = false;
 
       function docTop(el) {
         var t = 0;
@@ -819,19 +817,29 @@
       }
 
       function recalc() {
-        scrollStart = docTop(eyebrow) - BUFFER;
-        scrollEnd   = docTop(btn) + btn.offsetHeight - BUFFER;
+        scrollStart  = docTop(eyebrow) - BUFFER;
+        scrollEnd    = docTop(btn) + btn.offsetHeight - BUFFER;
+        // only translate far enough that photo bottom aligns with button bottom
+        maxTranslate = (docTop(btn) + btn.offsetHeight) - (docTop(photo) + photo.offsetHeight);
       }
 
       function update() {
         var range    = scrollEnd - scrollStart;
         var progress = Math.max(0, Math.min(1, (window.scrollY - scrollStart) / range));
-        photo.style.transform = 'translateY(' + (progress * range) + 'px)';
+        photo.style.transform = 'translateY(' + (progress * maxTranslate) + 'px)';
+        ticking = false;
       }
 
       recalc();
       update();
-      window.addEventListener('scroll', update, { passive: true });
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
       window.addEventListener('resize', function () { recalc(); update(); });
     })();
   </script>
