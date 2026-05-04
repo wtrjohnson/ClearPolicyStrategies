@@ -5,9 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clear Policy Strategies — U.S. Tax, Trade &amp; Regulatory Advisory</title>
   <meta name="description" content="Clear Policy Strategies advises companies, investors, foreign governments, and executives on U.S. tax, trade, investment, and regulatory policy. Founded by Aaron Taylor." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clearpolicystrategies.com/" />
+  <meta property="og:title" content="Clear Policy Strategies — U.S. Tax, Trade &amp; Regulatory Advisory" />
+  <meta property="og:description" content="Clear Policy Strategies advises companies, investors, foreign governments, and executives on U.S. tax, trade, investment, and regulatory policy. Founded by Aaron Taylor." />
+  <meta property="og:image" content="https://clearpolicystrategies.com/linkpreview.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="canonical" href="https://clearpolicystrategies.com/" />
+
+  <!-- Self-hosted fonts — no external CDN, no render-blocking -->
+  <link rel="preload" as="font" type="font/woff2" href="fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="fonts/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2" crossorigin />
+  <link rel="stylesheet" href="fonts.css" />
+
+  <!-- Preload hero background -->
+  <link rel="preload" as="image" href="Columns.webp" type="image/webp" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Clear Policy Strategies",
+    "description": "Boutique policy consulting firm specializing in U.S. tax, trade, investment, and regulatory policy.",
+    "url": "https://clearpolicystrategies.com",
+    "email": "aaron@clearpolicystrategies.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Aaron Taylor",
+      "jobTitle": "Founder"
+    },
+    "areaServed": "US",
+    "knowsAbout": ["Tax Policy", "Trade Policy", "Government Relations", "International Business", "Private Equity", "Regulatory Policy"]
+  }
+  </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -33,6 +68,23 @@
       background: var(--white);
       -webkit-font-smoothing: antialiased;
     }
+
+    /* ── SKIP NAV ── */
+    .skip-nav {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 9999;
+      padding: 12px 20px;
+      background: var(--navy-dark);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 0 0 4px 4px;
+      transition: top 0.1s;
+    }
+    .skip-nav:focus { top: 0; }
 
     /* ── NAV ── */
     nav {
@@ -116,7 +168,7 @@
     .hero-bg-pattern {
       position: absolute;
       inset: 0;
-      background-image: url('Columns.jpeg');
+      background-image: url('Columns.webp');
       background-size: cover;
       background-position: center 30%;
       background-repeat: no-repeat;
@@ -167,7 +219,7 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.80);
     }
 
     .hero h1 {
@@ -195,7 +247,7 @@
 
     .hero-qualifier {
       font-size: 13px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.70);
       line-height: 1.65;
       margin-bottom: 28px;
       max-width: 500px;
@@ -458,7 +510,7 @@
       gap: 14px;
       font-size: 16px;
       line-height: 1.6;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.88);
     }
 
     .when-dot {
@@ -590,7 +642,7 @@
 
     .cta-text p {
       font-size: 16px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.80);
       line-height: 1.6;
     }
 
@@ -607,7 +659,7 @@
       align-items: center;
       gap: 10px;
       font-size: 14px;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
     }
 
     .cta-contact-info strong {
@@ -632,7 +684,7 @@
     .footer-logo img {
       height: 60px;
       filter: brightness(0) invert(1);
-      opacity: 0.7;
+      opacity: 0.85;
     }
 
     .footer-nav {
@@ -646,16 +698,16 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.70);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-nav a:hover { color: rgba(255,255,255,0.8); }
+    .footer-nav a:hover { color: rgba(255,255,255,0.95); }
 
     .footer-copy {
       font-size: 12px;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.55);
     }
 
     .footer-credit {
@@ -663,21 +715,20 @@
       align-items: center;
       gap: 10px;
       font-size: 11px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.70);
       text-decoration: none;
       transition: color 0.2s;
-      cursor: pointer;
     }
 
     .footer-credit:hover {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.95);
     }
 
     .footer-credit img {
       height: 20px;
       width: auto;
       filter: brightness(0) invert(1);
-      opacity: 0.7;
+      opacity: 0.85;
     }
 
     /* ── DIFFERENTIATOR ── */
@@ -716,7 +767,7 @@
     .diff-body {
       font-size: 17px;
       line-height: 1.85;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,0.88);
     }
 
     .diff-clients {
@@ -737,7 +788,7 @@
     .diff-clients p {
       font-size: 16px;
       line-height: 1.85;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
     }
 
     .diff-help-list {
@@ -753,7 +804,7 @@
       gap: 12px;
       font-size: 15px;
       line-height: 1.55;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
     }
 
     /* ── TESTIMONIAL ── */
@@ -932,14 +983,19 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-nav">Skip to main content</a>
+
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Main navigation">
     <ul class="nav-left">
       <li><a href="about.html">About</a></li>
       <li><a href="practice-areas.html">Practice Areas</a></li>
     </ul>
     <a href="index.html" class="nav-logo">
-      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
+      <picture>
+        <source srcset="Logo-nav.webp" type="image/webp" />
+        <img src="Logo-nav.png" alt="Clear Policy Strategies" width="134" height="144" fetchpriority="high" />
+      </picture>
     </a>
     <div class="nav-right">
       <a href="contact.html" class="nav-cta">Contact Us</a>
@@ -947,9 +1003,9 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-lines"></div>
+  <section class="hero" id="main-content">
+    <div class="hero-bg-pattern" aria-hidden="true"></div>
+    <div class="hero-lines" aria-hidden="true"></div>
 
     <div class="hero-inner">
       <div class="hero-copy">
@@ -990,11 +1046,11 @@
     <div class="when-washington-inner">
       <h2 class="when-washington-title">When Washington<br />Decisions Affect<br />Your Business</h2>
       <ul class="when-washington-list">
-        <li><span class="when-dot"></span>Tax legislation could alter investment or transaction economics</li>
-        <li><span class="when-dot"></span>Tariff or trade policy affects market access or supply chains</li>
-        <li><span class="when-dot"></span>Foreign investment faces political or regulatory scrutiny</li>
-        <li><span class="when-dot"></span>Executive branch implementation matters as much as the statute</li>
-        <li><span class="when-dot"></span>A company needs to understand what policymakers are likely to do next</li>
+        <li><span class="when-dot" aria-hidden="true"></span>Tax legislation could alter investment or transaction economics</li>
+        <li><span class="when-dot" aria-hidden="true"></span>Tariff or trade policy affects market access or supply chains</li>
+        <li><span class="when-dot" aria-hidden="true"></span>Foreign investment faces political or regulatory scrutiny</li>
+        <li><span class="when-dot" aria-hidden="true"></span>Executive branch implementation matters as much as the statute</li>
+        <li><span class="when-dot" aria-hidden="true"></span>A company needs to understand what policymakers are likely to do next</li>
       </ul>
     </div>
   </section>
@@ -1003,7 +1059,10 @@
   <section class="about-section" id="about">
     <div class="about-inner">
       <div class="about-photo">
-        <img src="Headshot2.jpeg" alt="Aaron Taylor" />
+        <picture>
+          <source srcset="Headshot2.webp" type="image/webp" />
+          <img src="Headshot2.jpeg" alt="Aaron Taylor, Founder of Clear Policy Strategies" width="760" height="920" loading="lazy" />
+        </picture>
         <div class="about-photo-tag">
           <strong>Aaron Taylor</strong>
           <span>Founder, Clear Policy Strategies</span>
@@ -1012,7 +1071,7 @@
 
       <div class="about-content">
         <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
+          <div class="section-eyebrow-line" aria-hidden="true"></div>
           <span>About</span>
         </div>
         <h2 class="section-title" style="margin-bottom: 28px;">Aaron Taylor — Founder</h2>
@@ -1022,12 +1081,12 @@
         </div>
 
         <ul class="credentials-list">
-          <li><span class="cred-dot"></span>Senate Finance Committee — Chairman Orrin Hatch (R-UT)</li>
-          <li><span class="cred-dot"></span>VP of Tax &amp; Trade, Global Business Alliance (~200 international companies)</li>
-          <li><span class="cred-dot"></span>White House: National Economic Council &amp; Domestic Policy Council</li>
-          <li><span class="cred-dot"></span>Treasury, Commerce Department &amp; U.S. Trade Representative's Office</li>
-          <li><span class="cred-dot"></span>MBA, Quantic School of Business &amp; Technology</li>
-          <li><span class="cred-dot"></span>B.S., BYU Marriott School of Business</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>Senate Finance Committee — Chairman Orrin Hatch (R-UT)</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>VP of Tax &amp; Trade, Global Business Alliance (~200 international companies)</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>White House: National Economic Council &amp; Domestic Policy Council</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>Treasury, Commerce Department &amp; U.S. Trade Representative's Office</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>MBA, Quantic School of Business &amp; Technology</li>
+          <li><span class="cred-dot" aria-hidden="true"></span>B.S., BYU Marriott School of Business</li>
         </ul>
 
         <a href="about.html" class="btn-primary">
@@ -1041,7 +1100,7 @@
   <section class="differentiator" id="difference">
     <div class="differentiator-inner">
       <div class="section-eyebrow">
-        <div class="section-eyebrow-line"></div>
+        <div class="section-eyebrow-line" aria-hidden="true"></div>
         <span>Why Clear Policy Strategies</span>
       </div>
       <h2 class="section-title">What Makes Clear Policy<br />Strategies Different</h2>
@@ -1057,11 +1116,11 @@
         <div class="diff-clients">
           <h3>Where Clear Policy Helps</h3>
           <ul class="diff-help-list">
-            <li><span class="when-dot"></span>Tax legislation and implementation strategy</li>
-            <li><span class="when-dot"></span>Tariff, trade, and market access issues</li>
-            <li><span class="when-dot"></span>Foreign investment and CFIUS-related risk</li>
-            <li><span class="when-dot"></span>Congressional and executive branch engagement</li>
-            <li><span class="when-dot"></span>Policy intelligence for transactions and capital allocation</li>
+            <li><span class="when-dot" aria-hidden="true"></span>Tax legislation and implementation strategy</li>
+            <li><span class="when-dot" aria-hidden="true"></span>Tariff, trade, and market access issues</li>
+            <li><span class="when-dot" aria-hidden="true"></span>Foreign investment and CFIUS-related risk</li>
+            <li><span class="when-dot" aria-hidden="true"></span>Congressional and executive branch engagement</li>
+            <li><span class="when-dot" aria-hidden="true"></span>Policy intelligence for transactions and capital allocation</li>
           </ul>
         </div>
       </div>
@@ -1074,7 +1133,7 @@
       <div class="practice-header">
         <div>
           <div class="section-eyebrow">
-            <div class="section-eyebrow-line"></div>
+            <div class="section-eyebrow-line" aria-hidden="true"></div>
             <span>Practice Areas</span>
           </div>
           <h2 class="section-title">Two Pillars.<br />One Firm.</h2>
@@ -1086,27 +1145,27 @@
 
       <div class="practice-grid">
         <div class="practice-card">
-          <svg class="practice-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="practice-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M6 38L16 24L24 30L34 14L42 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M38 14H42V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M8 42H40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           <h3>Investment, Tax &amp; Capital Strategy</h3>
           <p>For investors, companies, and transaction-driven clients navigating tax legislation, capital gains exposure, CFIUS, or the financial services policies that affect investment decisions.</p>
-          <a href="practice-areas.html#investment" class="practice-card-link">
+          <a href="practice-areas.html#investment" class="practice-card-link" aria-label="Learn more about Investment, Tax and Capital Strategy">
             Learn More
           </a>
         </div>
 
         <div class="practice-card">
-          <svg class="practice-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="practice-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
             <ellipse cx="24" cy="24" rx="8" ry="18" stroke="currentColor" stroke-width="2"/>
             <path d="M6 24H42M6 16H42M6 32H42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           <h3>International Business &amp; Market Access</h3>
           <p>For foreign companies, embassies, trade associations, and governments managing tariff exposure, market entry, or bilateral trade and investment challenges in the United States.</p>
-          <a href="practice-areas.html#international" class="practice-card-link">
+          <a href="practice-areas.html#international" class="practice-card-link" aria-label="Learn more about International Business and Market Access">
             Learn More
           </a>
         </div>
@@ -1140,7 +1199,10 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">
-        <img src="Logo-traced.png" alt="Clear Policy Strategies" />
+        <picture>
+          <source srcset="Logo-traced.webp" type="image/webp" />
+          <img src="Logo-traced.png" alt="Clear Policy Strategies" width="75" height="80" loading="lazy" />
+        </picture>
       </div>
       <ul class="footer-nav">
         <li><a href="about.html">About</a></li>
@@ -1148,9 +1210,9 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="footer-copy">&copy; 2026 Clear Policy Strategies. All rights reserved.</div>
-      <a href="https://pebblesprings.co" target="_blank" class="footer-credit">
+      <a href="https://pebblesprings.co" target="_blank" rel="noopener noreferrer" class="footer-credit">
         <span>Built by</span>
-        <img src="PSLogo.svg" alt="Pebblesprings Studio" />
+        <img src="PSLogo.svg" alt="Pebblesprings Studio" width="80" height="20" loading="lazy" />
       </a>
     </div>
   </footer>
