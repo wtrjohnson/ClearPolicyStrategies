@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Practice Areas — Clear Policy Strategies</title>
+  <meta name="description" content="Clear Policy Strategies advises investors, companies, and foreign governments on U.S. tax, trade, and regulatory policy. Two practice areas: Investment, Tax & Capital Strategy and International Business & Market Access." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -195,25 +196,61 @@
 
     .btn-primary:hover { background: #a50e26; transform: translateY(-1px); }
 
-    /* ── PRACTICE AREA SECTIONS ── */
+    /* ── PILLAR BREAK ── */
+    .pillar-break {
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .pillar-break-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Capitol.jpeg');
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .pillar-break-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 18, 40, 0.70);
+    }
+
+    .pillar-break-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .pillar-break-content h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(30px, 3.5vw, 46px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .pillar-break-content h3 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── PRACTICE AREA SECTIONS ──*/
     .practice-section {
       padding: 100px 48px;
     }
 
-    .practice-section:nth-child(even) { background: var(--off-white); }
-    .practice-section:nth-child(odd) { background: var(--white); }
+    #investment { background: var(--white); }
+    #international { background: var(--off-white); }
 
     .practice-section-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
     }
-
-    .practice-section-inner.reverse { direction: rtl; }
-    .practice-section-inner.reverse > * { direction: ltr; }
 
     .practice-section-icon {
       width: 56px;
@@ -259,6 +296,25 @@
       line-height: 1.5;
     }
 
+    .who-its-for {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding: 8px 16px;
+      background: rgba(27, 58, 107, 0.07);
+      border-left: 3px solid var(--navy);
+      border-radius: 0 2px 2px 0;
+      font-size: 13px;
+      color: var(--navy-dark);
+      font-weight: 500;
+    }
+
+    .who-its-for strong {
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
     .detail-dot {
       width: 6px;
       height: 6px;
@@ -268,44 +324,31 @@
       margin-top: 7px;
     }
 
-    /* ── VISUAL PANEL ── */
-    .practice-visual {
-      background: var(--navy-dark);
-      padding: 56px 48px;
+    /* ── STATS BAR ── */
+    .practice-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 56px;
+      padding-top: 48px;
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .practice-stat-item {
+      padding: 0 48px;
+      border-right: 1px solid var(--light-gray);
       display: flex;
       flex-direction: column;
-      gap: 32px;
-      position: relative;
-      overflow: hidden;
+      gap: 8px;
     }
 
-    .practice-visual::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--red-bright);
-    }
-
-    .practice-visual-stat {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .practice-visual-stat:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+    .practice-stat-item:first-child { padding-left: 0; }
+    .practice-stat-item:last-child { border-right: none; }
 
     .stat-number {
       font-family: 'EB Garamond', serif;
       font-size: 52px;
       font-weight: 600;
-      color: var(--white);
+      color: var(--navy);
       line-height: 1;
     }
 
@@ -316,14 +359,7 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .stat-detail {
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.55);
-      margin-top: 4px;
+      color: var(--text-mid);
     }
 
     /* ── AGENCIES SECTION ── */
@@ -331,14 +367,6 @@
       background: var(--navy-dark);
       padding: 80px 48px;
       position: relative;
-    }
-
-    .agencies-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--red-bright);
     }
 
     .agencies-inner {
@@ -392,15 +420,7 @@
       overflow: hidden;
     }
 
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
-    }
-
-    .cta-banner-inner {
+.cta-banner-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
@@ -455,7 +475,7 @@
     }
 
     .footer-logo img {
-      height: 40px;
+      height: 60px;
       filter: brightness(0) invert(1);
       opacity: 0.7;
     }
@@ -507,10 +527,10 @@
   <!-- NAV -->
   <nav>
     <ul class="nav-left">
-      <li><a href="proposal-a.html">About</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="practice-areas.html" class="active">Practice Areas</a></li>
     </ul>
-    <a href="proposal-a.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="Logo-nav.png" alt="Clear Policy Strategies" />
     </a>
     <div class="nav-right">
@@ -529,7 +549,7 @@
         <h1>Two Pillars.<br /><em>One Firm.</em></h1>
       </div>
       <p class="page-header-intro">
-        Clear Policy Strategies works in two areas: U.S. investment strategy and international business. Both come out of twenty years across private equity, tax policy, and cross-border transactions.
+        Clear Policy Strategies advises investors, companies, and foreign governments navigating U.S. tax, trade, and regulatory policy. Two focused practice areas — built from twenty years at the intersection of private equity and federal policy.
       </p>
     </div>
   </section>
@@ -537,102 +557,98 @@
   <!-- INVESTMENT -->
   <section class="practice-section" id="investment">
     <div class="practice-section-inner">
-      <div>
-        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
-          <path d="M7 44L18 28L28 35L40 16L49 26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M45 16H49V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 49H47" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+        <path d="M8 46H50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 40L20 30L30 34L41 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M34 16L41 16L41 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
 
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Pillar One</span>
-        </div>
-        <h2>Investment<br /><em>Strategy</em></h2>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Practice Area One</span>
+      </div>
+      <h2>Investment, Tax &amp;<br /><em>Capital Strategy</em></h2>
 
-        <div class="practice-section-body">
-          <p>For twenty years, Aaron has worked in both private equity and federal policy. It's an uncommon combination. He understands how capital moves and how the legislation governing it actually gets made.</p>
-          <p>Whether you're managing tax exposure under a changing international framework or assessing policy risk before a major transaction, Clear Policy Strategies gives you strategic counsel and direct access before decisions are made, not after.</p>
-        </div>
-
-        <ul class="practice-detail-list">
-          <li><span class="detail-dot"></span>Tax policy impact assessments for investment structures and M&amp;A transactions</li>
-          <li><span class="detail-dot"></span>International tax structure advisory — GILTI, BEAT, FDII, and Pillar Two frameworks</li>
-          <li><span class="detail-dot"></span>Legislative monitoring on carried interest, capital gains, and financial services regulation</li>
-          <li><span class="detail-dot"></span>Advocacy before Senate Finance Committee and House Ways &amp; Means Committee</li>
-          <li><span class="detail-dot"></span>Coalition building and stakeholder strategy for regulatory outcomes</li>
-          <li><span class="detail-dot"></span>Strategic counsel on CFIUS and foreign investment review processes</li>
-        </ul>
-
-        <a href="contact.html" class="btn-primary">
-          Discuss Your Situation
-        </a>
+      <div class="practice-section-body">
+        <p>Tax law is written in Washington, but its impact is felt on term sheets, deal structures, and investment returns. When the rules are changing — or when you need to influence how they change — you need someone who understands both sides of the equation.</p>
+        <p>Aaron spent twenty years in private equity and federal tax policy. He knows how capital moves and how the legislation governing it actually gets made. Clear Policy Strategies gives you strategic counsel and direct access before decisions are finalized, not after.</p>
       </div>
 
-      <div class="practice-visual">
-        <div class="practice-visual-stat">
+      <ul class="practice-detail-list">
+        <li><span class="detail-dot"></span>Tax policy impact assessments for investment structures and M&amp;A transactions</li>
+        <li><span class="detail-dot"></span>International tax structure advisory — GILTI, BEAT, FDII, and Pillar Two frameworks</li>
+        <li><span class="detail-dot"></span>Legislative monitoring on carried interest, capital gains, and financial services regulation</li>
+        <li><span class="detail-dot"></span>Advocacy before Senate Finance Committee and House Ways &amp; Means Committee</li>
+        <li><span class="detail-dot"></span>Coalition building and stakeholder strategy for regulatory outcomes</li>
+        <li><span class="detail-dot"></span>Strategic counsel on CFIUS and foreign investment review processes</li>
+      </ul>
+
+      <div class="practice-stats-bar">
+        <div class="practice-stat-item">
           <div class="stat-number">20<sup>+</sup></div>
           <div class="stat-label">Years in Private Equity &amp; Policy</div>
         </div>
-        <div class="practice-visual-stat">
+        <div class="practice-stat-item">
           <div class="stat-number">30<sup>+</sup></div>
           <div class="stat-label">Senate Finance Hearings Organized</div>
-        </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Key Legislative Committees</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PILLAR BREAK -->
+  <div class="pillar-break">
+    <div class="pillar-break-bg"></div>
+    <div class="pillar-break-overlay"></div>
+    <div class="pillar-break-content">
+      <h3>Direct Access.<br /><em>Strategic Depth.</em></h3>
+    </div>
+  </div>
+
   <!-- INTERNATIONAL -->
   <section class="practice-section" id="international">
-    <div class="practice-section-inner reverse">
-      <div>
-        <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
-          <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
+    <div class="practice-section-inner">
+      <svg class="practice-section-icon" viewBox="0 0 56 56" fill="none">
+        <defs>
+          <clipPath id="clip-globe-lg">
+            <circle cx="28" cy="28" r="21"/>
+          </clipPath>
+        </defs>
+        <circle cx="28" cy="28" r="21" stroke="currentColor" stroke-width="2"/>
+        <g clip-path="url(#clip-globe-lg)">
           <ellipse cx="28" cy="28" rx="9" ry="21" stroke="currentColor" stroke-width="2"/>
-          <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+          <path d="M7 28H49M7 19H49M7 37H49" stroke="currentColor" stroke-width="2"/>
+        </g>
+      </svg>
 
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Pillar Two</span>
-        </div>
-        <h2>International<br /><em>Business</em></h2>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Practice Area Two</span>
+      </div>
+      <h2>International Business &amp;<br /><em>Market Access</em></h2>
 
-        <div class="practice-section-body">
-          <p>Washington is complicated for foreign governments and international businesses. The rules are fragmented, the politics move fast, and misreading a policy signal can be costly.</p>
-          <p>Aaron spent years at the Global Business Alliance advising nearly 200 international companies on U.S. tax, trade, and regulatory matters. He has active relationships at Treasury, Commerce, USTR, and across the Senate Republican Conference.</p>
-        </div>
-
-        <ul class="practice-detail-list">
-          <li><span class="detail-dot"></span>Market entry strategy and U.S. regulatory roadmapping for foreign businesses</li>
-          <li><span class="detail-dot"></span>Tariff and trade agreement strategy — Section 232, Section 301, and bilateral negotiations</li>
-          <li><span class="detail-dot"></span>Advocacy before Treasury, Commerce, and the U.S. Trade Representative's office</li>
-          <li><span class="detail-dot"></span>Foreign government advisory on bilateral trade and investment frameworks</li>
-          <li><span class="detail-dot"></span>Political risk assessment and legislative intelligence for cross-border transactions</li>
-          <li><span class="detail-dot"></span>Stakeholder engagement with the National Economic Council and Domestic Policy Council</li>
-        </ul>
-
-        <a href="contact.html" class="btn-primary">
-          Discuss Your Situation
-        </a>
+      <div class="practice-section-body">
+        <p>Washington is complicated for foreign governments and international businesses. The rules are fragmented, the politics move fast, and misreading a policy signal can be costly.</p>
+        <p>Aaron spent years at the Global Business Alliance advising nearly 200 international companies on U.S. tax, trade, and regulatory matters. He has active relationships at Treasury, Commerce, USTR, and across the Senate Republican Conference — and knows how to navigate the institutions that shape U.S. trade and investment policy.</p>
       </div>
 
-      <div class="practice-visual">
-        <div class="practice-visual-stat">
+      <ul class="practice-detail-list">
+        <li><span class="detail-dot"></span>Market entry strategy and U.S. regulatory roadmapping for foreign businesses</li>
+        <li><span class="detail-dot"></span>Tariff and trade agreement strategy — Section 232, Section 301, and bilateral negotiations</li>
+        <li><span class="detail-dot"></span>Advocacy before Treasury, Commerce, and the U.S. Trade Representative's office</li>
+        <li><span class="detail-dot"></span>Foreign government advisory on bilateral trade and investment frameworks</li>
+        <li><span class="detail-dot"></span>Political risk assessment and legislative intelligence for cross-border transactions</li>
+        <li><span class="detail-dot"></span>Stakeholder engagement with the National Economic Council and Domestic Policy Council</li>
+      </ul>
+
+      <div class="practice-stats-bar">
+        <div class="practice-stat-item">
           <div class="stat-number">200<sup>+</sup></div>
           <div class="stat-label">International Companies Represented</div>
         </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">5<sup>+</sup></div>
-          <div class="stat-label">Years of International Focus</div>
-        </div>
-        <div class="practice-visual-stat">
-          <div class="stat-number">4</div>
-          <div class="stat-label">Key Federal Agencies</div>
+        <div class="practice-stat-item">
+          <div class="stat-number">25<sup>+</sup></div>
+          <div class="stat-label">Embassies in Aaron's Network</div>
         </div>
       </div>
     </div>
@@ -642,17 +658,13 @@
   <section class="cta-banner">
     <div class="cta-banner-inner">
       <div class="cta-text">
-        <h2>Ready to Shape Policy<br />in Your Favor?</h2>
-        <p>Contact us to talk through your specific situation.</p>
+        <h2>Ready to Discuss a<br />Policy Challenge?</h2>
+        <p>Schedule a confidential conversation about your specific situation.</p>
       </div>
       <div class="cta-actions">
         <a href="contact.html" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
-          Schedule a Consultation
+          Contact Us
         </a>
-        <div class="cta-contact-info">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 0v6l4 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Washington, D.C. — Available Nationwide</span>
-        </div>
       </div>
     </div>
   </section>

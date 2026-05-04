@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About — Clear Policy Strategies</title>
+  <title>About Aaron Taylor — Clear Policy Strategies</title>
+  <meta name="description" content="Aaron Taylor brings twenty years across Senate Finance, Treasury, USTR, the White House, and private-sector advocacy to every client engagement at Clear Policy Strategies." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -36,57 +37,71 @@
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      justify-content: space-between;
       padding: 0 48px;
-      height: 92px;
-      background: rgba(15, 36, 71, 0.97);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      height: 88px;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
 
-    .nav-logo {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .nav-logo img { height: 68px; width: auto; }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
+      gap: 32px;
       list-style: none;
     }
 
-    .nav-links a {
-      font-size: 13px;
+    .nav-left a {
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
+      color: var(--text-dark);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--white); }
-    .nav-links a.active { color: var(--white); }
+    .nav-left a:hover { color: var(--navy); }
+    .nav-left a.active { color: var(--navy); font-weight: 600; }
 
-    .nav-cta {
-      background: var(--red-bright) !important;
-      color: var(--white) !important;
-      padding: 10px 22px;
-      border-radius: 2px;
-      font-size: 12px !important;
-      letter-spacing: 0.1em !important;
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
-    .nav-cta:hover { background: #a50e26 !important; }
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+      filter: brightness(0) saturate(100%) invert(19%) sepia(65%) saturate(600%) hue-rotate(205deg) brightness(90%);
+    }
+
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .nav-cta {
+      background: var(--red-bright);
+      color: var(--white) !important;
+      padding: 10px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: #a50e26; }
 
     /* ── PAGE HEADER ── */
     .page-header {
@@ -96,15 +111,7 @@
       overflow: hidden;
     }
 
-    .page-header::before {
-      content: '';
-      position: absolute;
-      top: 92px; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
-    }
-
-    .page-header-inner {
+.page-header-inner {
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -210,6 +217,7 @@
 
     .bio-photo {
       position: relative;
+      will-change: transform;
     }
 
     .bio-photo img {
@@ -242,17 +250,6 @@
       color: var(--gold);
     }
 
-    .bio-photo::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      right: 12px;
-      bottom: 12px;
-      border: 1px solid rgba(27,58,107,0.15);
-      pointer-events: none;
-      z-index: -1;
-    }
 
     .bio-body {
       font-size: 17px;
@@ -317,41 +314,36 @@
 
     /* ── EDUCATION SECTION ── */
     .education-section {
-      padding: 80px 48px;
+      padding: 60px 48px;
       background: var(--white);
     }
 
     .education-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
     }
 
     .education-degrees {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 40px;
     }
 
     .education-degrees li {
-      padding: 28px 0;
-      border-bottom: 1px solid var(--light-gray);
+      background: var(--navy-dark);
+      padding: 36px 44px;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
-
-    .education-degrees li:first-child { border-top: 1px solid var(--light-gray); }
 
     .degree-name {
       font-family: 'EB Garamond', serif;
       font-size: 22px;
       font-weight: 600;
-      color: var(--navy-dark);
+      color: var(--white);
     }
 
     .degree-school {
@@ -359,46 +351,66 @@
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-mid);
+      color: rgba(255,255,255,0.6);
     }
 
-    .education-quote {
-      padding: 48px;
-      background: var(--navy-dark);
-      position: relative;
+    /* ── SENIOR ADVISORS ── */
+    .advisors-section {
+      background: var(--off-white);
+      padding: 100px 48px;
     }
 
-    .education-quote::before {
-      content: '\201C';
-      font-family: 'EB Garamond', serif;
-      font-size: 120px;
-      color: rgba(201,168,76,0.2);
-      position: absolute;
-      top: 16px;
-      left: 32px;
-      line-height: 1;
+    .advisors-inner {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .education-quote blockquote {
-      font-family: 'EB Garamond', serif;
-      font-size: 22px;
-      font-style: italic;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.6;
-      position: relative;
-      z-index: 1;
+    .advisors-inner .section-title {
+      margin-bottom: 56px;
     }
 
-    .education-quote cite {
+    .advisor-card {
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      margin-bottom: 2px;
+      overflow: hidden;
+    }
+
+    .advisor-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      object-position: center top;
       display: block;
-      margin-top: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+    }
+
+    .advisor-content {
+      padding: 44px 52px;
+    }
+
+    .advisor-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy-dark);
+      margin-bottom: 6px;
+    }
+
+    .advisor-role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--red-bright);
+      margin-bottom: 24px;
+    }
+
+    .advisor-bio {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-mid);
     }
 
     /* ── CTA BANNER ── */
@@ -407,14 +419,6 @@
       padding: 80px 48px;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--red-bright), var(--gold), transparent);
     }
 
     .cta-banner-inner {
@@ -472,7 +476,7 @@
     }
 
     .footer-logo img {
-      height: 40px;
+      height: 60px;
       filter: brightness(0) invert(1);
       opacity: 0.7;
     }
@@ -527,14 +531,16 @@
 
   <!-- NAV -->
   <nav>
-    <a href="proposal-a.html" class="nav-logo">
-      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
-    </a>
-    <ul class="nav-links">
+    <ul class="nav-left">
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="practice-areas.html">Practice Areas</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
     </ul>
+    <a href="index.html" class="nav-logo">
+      <img src="Logo-nav.png" alt="Clear Policy Strategies" />
+    </a>
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Contact Us</a>
+    </div>
   </nav>
 
   <!-- PAGE HEADER -->
@@ -564,17 +570,17 @@
           <div class="section-eyebrow-line"></div>
           <span>Biography</span>
         </div>
-        <h2 class="section-title" style="margin-bottom: 32px;">The Rare Combination of<br />Policy and Private Markets.</h2>
+        <h2 class="section-title" style="margin-bottom: 32px;">Twenty Years on Both Ends<br />of the Conversation.</h2>
 
         <div class="bio-body">
-          <p>Aaron Taylor founded Clear Policy Strategies to bring rare, dual-track experience to clients navigating Washington — twenty years spanning private equity investing and federal policy advocacy, with deep relationships across Capitol Hill, Treasury, and the White House.</p>
-          <p>He began his political career on the Senate Finance Committee under Chairman Orrin Hatch, organizing over 30 hearings on tax reform and building direct relationships with the Members and staff who draft every major piece of tax and trade legislation. That foundation gave Aaron an insider's understanding of how policy is actually made — and how to influence it effectively.</p>
-          <p>As VP of Tax &amp; Trade at the Global Business Alliance, he represented nearly 200 international companies before Treasury, the White House, and Capitol Hill — developing a uniquely global perspective on U.S. economic policy and the legislative environment that shapes cross-border investment.</p>
-          <p>Over the past five years, Aaron has focused on helping international governments and companies invest and succeed in the United States — bringing that same network to bear across the National Economic Council, Domestic Policy Council, Commerce Department, and the U.S. Trade Representative's office.</p>
-          <p>Today, Clear Policy Strategies serves a select group of clients who need more than access — they need strategic counsel from someone who has sat on both sides of the table.</p>
+          <p>Aaron Taylor founded Clear Policy Strategies after twenty years split between federal policy and private equity — Senate Finance, the White House, and the executive branch on one side; managing legislative strategy for nearly 200 international companies on the other.</p>
+          <p>He started on the Senate Finance Committee under Chairman Orrin Hatch, running more than 30 hearings on tax reform. He got to know the Members and staff who write every major piece of tax and trade legislation — and how they actually think about it.</p>
+          <p>As VP of Tax &amp; Trade at the Global Business Alliance, he lobbied on behalf of nearly 200 international companies — at Treasury, the White House, and Capitol Hill — on tax, trade, and financial services policy.</p>
+          <p>Over the past five years, he has focused on international clients: governments and companies working to invest or operate in the United States, using the same relationships at the NEC, Commerce, and USTR.</p>
+          <p>Clear Policy Strategies is a small practice by design. Clients value the relationships, but the deeper advantage is judgment: knowing who matters, what they care about, and when to engage.</p>
         </div>
 
-        <a href="contact.html" class="btn-primary">
+        <a href="contact.html" class="btn-primary" id="work-with-aaron">
           Work With Aaron
         </a>
       </div>
@@ -588,7 +594,7 @@
         <div class="section-eyebrow-line"></div>
         <span>Credentials &amp; Experience</span>
       </div>
-      <h2 class="section-title" style="margin-bottom: 56px;">A Career Built at<br />the Highest Levels.</h2>
+      <h2 class="section-title" style="margin-bottom: 56px;">Where He's<br />Worked.</h2>
 
       <div class="credentials-grid">
         <div class="credential-block">
@@ -598,19 +604,26 @@
           </svg>
           <div>
             <h4>Senate Finance Committee</h4>
-            <p>Served under Chairman Orrin Hatch (R-UT), organizing over 30 hearings on tax reform. Built direct relationships with the Members and staff responsible for every major piece of tax and trade legislation originating in the Senate.</p>
+            <p>Served under Chairman Orrin Hatch (R-UT), running more than 30 hearings on tax reform. Knows the Members and staff behind every major piece of tax and trade legislation out of the Senate.</p>
           </div>
         </div>
 
         <div class="credential-block">
           <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <clipPath id="clip-globe">
+                <circle cx="22" cy="22" r="16"/>
+              </clipPath>
+            </defs>
             <circle cx="22" cy="22" r="16" stroke="currentColor" stroke-width="1.8"/>
-            <ellipse cx="22" cy="22" rx="7" ry="16" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M6 22H38M6 15H38M6 29H38" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <g clip-path="url(#clip-globe)">
+              <ellipse cx="22" cy="22" rx="7" ry="16" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M6 22H38M6 15H38M6 29H38" stroke="currentColor" stroke-width="1.8"/>
+            </g>
           </svg>
           <div>
             <h4>Global Business Alliance</h4>
-            <p>As VP of Tax &amp; Trade, represented nearly 200 international companies before the U.S. Treasury, the White House, and Capitol Hill — developing deep expertise in cross-border investment policy and international regulatory strategy.</p>
+            <p>As VP of Tax &amp; Trade, represented nearly 200 international companies before Treasury, the White House, and Capitol Hill on tax, trade, and financial services — with regular engagement across Senate Finance, Ways and Means, Commerce, and USTR.</p>
           </div>
         </div>
 
@@ -622,19 +635,19 @@
           </svg>
           <div>
             <h4>White House: NEC &amp; Domestic Policy Council</h4>
-            <p>Worked directly with the National Economic Council and Domestic Policy Council — two of the most influential bodies shaping U.S. economic and regulatory policy — on behalf of international clients navigating U.S. market entry.</p>
+            <p>Worked with the National Economic Council and Domestic Policy Council on tax and regulatory policy, advising on issues affecting international clients entering the U.S. market.</p>
           </div>
         </div>
 
         <div class="credential-block">
           <svg class="credential-icon" viewBox="0 0 44 44" fill="none">
-            <path d="M6 34L14 22L22 28L31 13L38 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M35 13H38V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7 38H37" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M6 36H38" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8 33L17 25L25 28L33 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M27 12L33 12L33 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <div>
             <h4>Treasury, Commerce &amp; USTR</h4>
-            <p>Sustained, ongoing relationships with the U.S. Department of Treasury, the Commerce Department, and the U.S. Trade Representative's office — providing clients direct access to the agencies that set tariff, trade, and investment policy.</p>
+            <p>Active relationships across Treasury, Commerce, and USTR — the agencies that actually set tariff, trade, and investment policy.</p>
           </div>
         </div>
       </div>
@@ -644,30 +657,41 @@
   <!-- EDUCATION -->
   <section class="education-section">
     <div class="education-inner">
-      <div>
-        <div class="section-eyebrow">
-          <div class="section-eyebrow-line"></div>
-          <span>Education</span>
-        </div>
-        <h2 class="section-title" style="margin-bottom: 40px;">Academic<br />Foundation.</h2>
-
-        <ul class="education-degrees">
-          <li>
-            <span class="degree-name">Master of Business Administration</span>
-            <span class="degree-school">Quantic School of Business &amp; Technology</span>
-          </li>
-          <li>
-            <span class="degree-name">B.S., Business Management</span>
-            <span class="degree-school">BYU Marriott School of Business</span>
-          </li>
-        </ul>
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Education</span>
       </div>
+      <h2 class="section-title">Academic Foundation.</h2>
 
-      <div class="education-quote">
-        <blockquote>
-          "The most effective advocacy isn't about access alone — it's about understanding how legislation actually moves, and positioning your client at exactly the right moment."
-          <cite>— Aaron Taylor, Founder</cite>
-        </blockquote>
+      <ul class="education-degrees">
+        <li>
+          <span class="degree-name">B.S., Business Management</span>
+          <span class="degree-school">BYU Marriott School of Business</span>
+        </li>
+        <li>
+          <span class="degree-name">Master of Business Administration</span>
+          <span class="degree-school">Quantic School of Business &amp; Technology</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SENIOR ADVISORS -->
+  <section class="advisors-section" id="advisors">
+    <div class="advisors-inner">
+      <div class="section-eyebrow">
+        <div class="section-eyebrow-line"></div>
+        <span>Senior Advisors</span>
+      </div>
+      <h2 class="section-title">Senior Advisors</h2>
+
+      <div class="advisor-card">
+        <img src="Headshot-Moreno-.jpeg" alt="Carlos A. Moreno" />
+        <div class="advisor-content">
+          <div class="advisor-name">Carlos A. Moreno</div>
+          <div class="advisor-role">Salt Lake County Councilman</div>
+          <p class="advisor-bio">Carlos A. Moreno is a Salt Lake County Councilman and attorney who immigrated to the United States from Venezuela. He holds a law degree from Rafael Urdaneta University with a specialization in Venezuelan Labor Law, and earned degrees in Political Science &amp; Government and Homeland Security &amp; Emergency Management from Salt Lake Community College. A former student body president and Vice President of the Utah Student Association, Carlos brings a firsthand understanding of democratic institutions, governance, and the stakes of policy — both abroad and at home.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -680,7 +704,7 @@
         <p>Schedule a confidential consultation to discuss your legislative strategy, regulatory challenges, or government relations needs.</p>
       </div>
       <div class="cta-actions">
-        <a href="mailto:aaron@clearpolicystrategies.com" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
+        <a href="contact.html" class="btn-primary" style="font-size: 14px; padding: 17px 36px;">
           Get in Touch
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M8 2L13 7L8 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -707,5 +731,44 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var photo   = document.querySelector('.bio-photo');
+      var eyebrow = document.querySelector('.bio-content .section-eyebrow');
+      var btn     = document.getElementById('work-with-aaron');
+      var BUFFER  = 112; // nav height + small gap
+
+      var scrollStart, maxTranslate, ticking = false;
+
+      function docTop(el) {
+        var t = 0;
+        while (el) { t += el.offsetTop; el = el.offsetParent; }
+        return t;
+      }
+
+      function recalc() {
+        scrollStart  = docTop(eyebrow) - BUFFER;
+        maxTranslate = (docTop(btn) + btn.offsetHeight) - (docTop(photo) + photo.offsetHeight);
+      }
+
+      function update() {
+        var ty = Math.max(0, Math.min(maxTranslate, Math.round(window.scrollY - scrollStart)));
+        photo.style.transform = 'translateY(' + ty + 'px)';
+        ticking = false;
+      }
+
+      recalc();
+      update();
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', function () { recalc(); update(); });
+    })();
+  </script>
 </body>
 </html>
