@@ -1025,10 +1025,12 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 0 20px; height: 70px; border-radius: 0 0 14px 14px; }
+      nav { padding: 0 20px; height: 70px; border-radius: 0 0 14px 14px; grid-template-columns: 1fr auto; }
       .nav-left { display: none; }
       .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-logo { grid-column: 1; }
+      .nav-right { grid-column: 2; }
       .nav-logo img { height: 56px; }
 
       .hero-inner { padding: 100px 20px 60px; }
@@ -1241,7 +1243,6 @@
           <svg class="practice-icon" viewBox="0 0 56 56" fill="none" aria-hidden="true">
             <path d="M8 46H50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path d="M10 40L20 30L30 34L41 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M34 16L41 16L41 23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           <h3>Investment, Tax &amp; Capital Strategy</h3>
           <p>For investors, companies, and transaction-driven clients navigating tax legislation, capital gains exposure, CFIUS, or the financial services policies that affect investment decisions.</p>
